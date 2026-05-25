@@ -29,6 +29,9 @@ It is not a tutorial collection. Each module is built to a standard that would b
 ## Architecture (target)
 
 The repository builds toward a medallion lakehouse pattern:
+Source  --->  Bronze (raw, append-only)  --->  Silver (cleaned, conformed)  --->  Gold (modelled, consumable)
+|                                  |                                |
++---- Delta transaction log -------+---- Schema enforcement --------+
 Each layer has different guarantees, retention, and downstream contracts. Layer transitions are explicit, idempotent, and testable.
 
 ## Repository Layout
