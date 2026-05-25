@@ -29,12 +29,15 @@ It is not a tutorial collection. Each module is built to a standard that would b
 ## Architecture (target)
 
 The repository builds toward a medallion lakehouse pattern:
+```
 Source  --->  Bronze (raw, append-only)  --->  Silver (cleaned, conformed)  --->  Gold (modelled, consumable)
 |                                  |                                |
 +---- Delta transaction log -------+---- Schema enforcement --------+
+```
 Each layer has different guarantees, retention, and downstream contracts. Layer transitions are explicit, idempotent, and testable.
 
 ## Repository Layout
+```
 de-foundations/
 ├── .github/workflows/      CI: lint, type-check, test (GitHub Actions)
 ├── data/
@@ -44,6 +47,7 @@ de-foundations/
 ├── notebooks/              Exploratory PySpark / Delta work
 ├── src/de_foundations/     Production-grade reusable modules
 └── tests/                  Pytest unit + integration tests
+```
 ## Toolchain
 
 | Concern | Tool | Why |
