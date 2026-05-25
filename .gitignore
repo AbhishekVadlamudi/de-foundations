@@ -1,0 +1,136 @@
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments (uv creates .venv)
+.venv/
+venv/
+ENV/
+env/
+
+# uv
+# Lockfile IS committed; cache is not
+.uv-cache/
+
+# ============================================================
+# IDEs and editors
+# ============================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ============================================================
+# Jupyter
+# ============================================================
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+# Notebook outputs (we'll strip these via pre-commit later)
+# *.ipynb
+
+# ============================================================
+# Testing and coverage
+# ============================================================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+.mypy_cache/
+.ruff_cache/
+
+# ============================================================
+# Spark / Delta / lakehouse local artifacts
+# ============================================================
+# Spark writes a warehouse dir for local metastore
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Local Delta tables generated during exploration
+*.delta/
+delta-table/
+
+# Spark event logs (UI history)
+spark-events/
+
+# Hadoop / Hive
+.hive/
+
+# ============================================================
+# Data — never commit data files
+# ============================================================
+data/raw/*
+data/processed/*
+# But keep the directories themselves
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Common data file extensions (defence in depth)
+*.csv
+*.parquet
+*.json
+*.jsonl
+*.avro
+*.orc
+*.tsv
+*.xlsx
+*.xls
+
+# ============================================================
+# Secrets — defence in depth
+# ============================================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*_secret.*
+*credentials*
+*.tfvars
+!*.tfvars.example
+
+# ============================================================
+# OS
+# ============================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ============================================================
+# Logs
+# ============================================================
+*.log
+logs/
